@@ -1,0 +1,69 @@
+body{
+    height: 100vh;
+}
+
+.myTodo{
+    color: blue;
+    margin: 10px;
+    margin: 0 auto;
+}
+#todo-btn{ 
+    background-image: linear-gradient(to right, red , blue);
+    font-size: 20px;
+}
+
+#check{
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 50%;
+    background-color: green;
+    color: white;
+    margin: 10px;
+}
+
+#truch{
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#PencilID{
+    font-size: 20px !important;
+    color: blue;
+}
+
+
+
+#divContianToEdit{
+    width: 100vw; 
+    height: 100vh; 
+    display: none; 
+    justify-content: center;
+    position:fixed; 
+    z-index: 10;
+    align-items: center;
+}
+    
+.toEdet{
+    margin: 0 auto;
+    position: fixed;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    height: 80vh;
+    background-color: rgba(19, 17, 17, 0.7);;
+}
+#closerTheEdit{
+    position:absolute;
+    top: 10px;
+    right: 20px;
+    color: white;
+    font-size: 40px; 
+}
+#inpEdet{
+    
+    height: 60px;
+    width: 30%;
+}
