@@ -62,10 +62,18 @@ class theTodo{
 
     edit(id,text){
         let theID = this.getId(id);
-        let changeText  = this.TheTodoArr.map((element) => element.text = text);
-        if(changeText){
-            return theID
+        let changeText = this.TheTodoArr.map((element) => {
+            if(element.id===id){
+                element.text = text
+            }
+        })
+
+        if (changeText) {
+        return theID            
         }
+        
+         
+        
         
     }
     changeIsFinch(id,isFinch=null){
@@ -84,10 +92,9 @@ class theTodo{
     }
 
 }
-
-/* let  mangerTodoTest  = new theTodo();
+/* 
+let  mangerTodoTest  = new theTodo();
 console.log(mangerTodoTest.add("hanna"));
 console.log(mangerTodoTest.add("hanna"));
 console.log(mangerTodoTest.add("hanna"));
-console.log(mangerTodoTest.edit(2,"rami"));
 console.log(mangerTodoTest.edit(0,"momo")); */
