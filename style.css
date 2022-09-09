@@ -12,14 +12,34 @@ body{
     font-size: 20px;
 }
 
+.explainWhatCheckDo{
+    display: inline;
+}
+
+#SpanExplainWhatCheckDo{
+    display: none;
+    
+}
+.explainWhatCheckDo:hover #SpanExplainWhatCheckDo{
+    display: inline;
+}
+
+
 #check{
     cursor: pointer;
     font-size: 20px;
     border-radius: 50%;
     background-color: green;
     color: white;
-    margin: 10px;
+    margin-inline: 10px;
 }
+
+#isCheck{
+    background-color: cornsilk !important;
+    color: black !important;
+    margin-inline: 10px;
+}
+
 
 #truch{
     cursor: pointer;
@@ -63,7 +83,7 @@ body{
     font-size: 40px; 
 }
 #inpEdet{
-    
+    margin-block: 20px;
     height: 60px;
     width: 30%;
 }

@@ -19,7 +19,8 @@ todoList.addEventListener("click" , (e)=>{
        mangerTodo.removeFroMTodo(todoId); 
     }
     else if(theAddItem){
-        mangerTodo.save();
+      mangerTodo.checkIsChange(todoId);
+        mangerTodo.save(); 
     }
     else if(pencil){
         divContianToEdit.style.display = "flex"
@@ -39,7 +40,7 @@ todoList.addEventListener("click" , (e)=>{
         input.setAttribute("id","inpEdet");
 
         let btn = document.createElement("button");
-        btn.innerHTML = "finch"
+        btn.innerHTML = "finished"
 
         div.appendChild(IElement);
         div.appendChild(h1);
@@ -75,7 +76,7 @@ function addToTodo(){
         mangerTodo.add(todoInput.value);
         render();
         restInp();
-        restErr()
+        restErr();
     }
     catch(err){
         error(err.message);
@@ -90,13 +91,17 @@ function render(){
     for(let todoItem of manger){
         html += `<li  data-todo-id="${todoItem.id}" class="list-group-item cursor-pointer">
         <i class="bi bi-pencil" id="PencilID"></i>
-        <i class="bi bi-check-lg" id="check"></i>
+        <div class="explainWhatCheckDo"> 
+        <i class="bi bi-check-lg" id="${todoItem.isCheck ? "isCheck":"check" }"}"></i>
+        <span id="SpanExplainWhatCheckDo">on click you save </span> 
+        </div>
+       
+       
        <i class="bi bi-trash-fill text-danger" id="truch"></i>
        <span  class="ms-2 ${todoItem.isFinch ? "text-muted text-decoration-line-through" : "" }">
          ${todoItem.text}
        </span>
      </li>`
-
     }
     todoList.innerHTML = html;
 }

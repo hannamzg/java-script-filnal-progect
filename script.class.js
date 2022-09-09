@@ -39,6 +39,7 @@ class theTodo{
             isFinch : false,
             text,
             data : new Date, 
+            isCheck:false,
         }
         
         this.TheTodoArr.push(TheTodos);
@@ -70,12 +71,21 @@ class theTodo{
 
         if (changeText) {
         return theID            
-        }
-        
-         
-        
-        
+        }  
     }
+
+    checkIsChange(id){
+        let theID = this.getId(id);
+        let checkIsChange = this.TheTodoArr.map((element) => {
+            if(element.id===id){
+                element.isCheck = true;
+            }
+        })
+        if (checkIsChange) {
+        return theID            
+        } 
+
+    }   
     changeIsFinch(id,isFinch=null){
         let theID = this.getId(id);
         theID.isFinch = typeof isFinch === "boolean" ? isFinch : !theID.isFinch;
@@ -92,9 +102,9 @@ class theTodo{
     }
 
 }
-/* 
+
 let  mangerTodoTest  = new theTodo();
 console.log(mangerTodoTest.add("hanna"));
 console.log(mangerTodoTest.add("hanna"));
 console.log(mangerTodoTest.add("hanna"));
-console.log(mangerTodoTest.edit(0,"momo")); */
+console.log(mangerTodoTest.checkIsChange(0));
